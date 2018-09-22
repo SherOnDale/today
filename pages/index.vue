@@ -3,20 +3,16 @@
     <section class="intro">
       <h1>Today I learned that...</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview  id="1" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
-      <PostPreview id="2" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
-      <PostPreview id="3" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
-    </section>
+    <PostList />
   </main>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import PostList from '@/components/Posts/PostList'
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 }
 </script>
@@ -52,14 +48,5 @@ export default {
     .intro h1 {
         font-size: 2rem;
     }
-}
-
-.featured-posts {
-    display: flex;
-    padding: 20px;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 </style>
