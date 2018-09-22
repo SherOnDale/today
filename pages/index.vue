@@ -1,65 +1,64 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        blog
-      </h1>
-      <h2 class="subtitle">
-        My blog
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="intro">
+      <h1>Today I learned that...</h1>
+    </section>
+    <section class="featured-posts">
+      <PostPreview  id="1" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
+      <PostPreview id="2" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
+      <PostPreview id="3" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
+    </section>
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import PostPreview from '@/components/Posts/PostPreview'
 
 export default {
   components: {
-    Logo
+    PostPreview
   }
 }
 </script>
 
-<style>
-.container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+<style scoped>
+.intro {
+    height: 300px;
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
 }
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+
+.intro h1 {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    font-size: 1.5rem;
+    color: black;
+    background-color: rgb(211, 211, 211);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px black;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+
+@media (min-width: 768px) {
+    .intro h1 {
+        font-size: 2rem;
+    }
 }
-.links
-{
-  padding-top: 15px;
+
+.featured-posts {
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 </style>
