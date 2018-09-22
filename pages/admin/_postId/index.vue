@@ -13,6 +13,7 @@ export default {
   components: {
     PostForm
   },
+  layout: 'admin',
   data() {
     return {
       loadedPost: {
