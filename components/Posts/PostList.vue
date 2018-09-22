@@ -1,8 +1,6 @@
 <template>
     <section class="posts">
-      <PostPreview :is-admin="isAdmin" id="1" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
-      <PostPreview :is-admin="isAdmin" id="2" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
-      <PostPreview :is-admin="isAdmin" id="3" title="Hello There" previewText="This is my first post" thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-gso804XBJK2XLt1MAiQ0NoAPvfF5qyZEkmN8_TeRpDsyp8fudA"/>
+      <PostPreview v-for="post in posts" :key="post.id" :is-admin="isAdmin" :id="post.id" :title="post.title" :previewText="post.previewText" :thumbnail="post.thumbnail"/>
     </section>
 </template>
 
@@ -17,6 +15,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }

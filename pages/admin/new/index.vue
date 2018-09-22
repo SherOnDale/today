@@ -1,17 +1,20 @@
 <template>
   <main>
     <section class="new-post-form">
-      <PostForm />
+      <PostForm @submit="onSubmit"/>
     </section>
   </main>
 </template>
 
 <script>
-import PostForm from '@/components/UI/PostForm'
+import axios from 'axios'
 
 export default {
-  components: {
-    PostForm
+  methods: {
+    onSubmit(postData) {
+      this.$store.dispatch('addPost', postData)
+        .then(() => this.$router.go(-1))
+    }
   },
   layout: 'admin'
 }
@@ -19,14 +22,14 @@ export default {
 
 <style scoped>
 .new-post-form {
-  width: 90%;
-  margin: 20px auto;
+    width: 90%;
+    margin: 20px auto;
 }
 
 @media (min-width: 768px) {
-  .new-post-form {
-    width: 500px;
-  }
+    .new-post-form {
+        width: 500px;
+    }
 }
 </style>
 
