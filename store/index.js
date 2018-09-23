@@ -137,7 +137,7 @@ const createStore = () => {
             .split(';')
             .find(c => c.trim().startsWith('tokenExpiration='))
             .split('=')[1];
-        } else {
+        } else if (process.client) {
           token = localStorage.getItem('token');
           expirationTime = localStorage.getItem('tokenExpiration');
         }

@@ -9,16 +9,18 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.2",
+    "@tinymce/tinymce-vue": "^1.0.9",
     "axios": "^0.18.0",
-    "cross-env": "^5.2.0",
     "js-cookie": "^2.2.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "nodemon": "^1.11.0"
   }
 }

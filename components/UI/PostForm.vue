@@ -6,13 +6,16 @@
 
     <AppControlInput v-model="editedPost.thumbnail">Thumbnail Link</AppControlInput>
 
-    <AppControlInput
+    <!-- <AppControlInput
               control-type="textarea"
               v-model="editedPost.content">Content</AppControlInput>
 
     <AppControlInput
               control-type="textarea"
-              v-model="editedPost.previewText">Preview Text</AppControlInput>
+              v-model="editedPost.previewText">Preview Text</AppControlInput> -->
+    <Editor api-key="8emogs8yqskwopjg2onxasg1jwx4oasdf6nhsb1dhr88nx7y" v-model="editedPost.content">Content</Editor>
+
+    <Editor api-key="8emogs8yqskwopjg2onxasg1jwx4oasdf6nhsb1dhr88nx7y" v-model="editedPost.previewText">Preview Text</Editor>
 
     <AppButton type="submit"> {{ post ? 'Update' : 'Save' }} </AppButton>
 
@@ -27,6 +30,7 @@
 </template>
 
 <script>
+import Editor from '@tinymce/tinymce-vue'
 
 export default {
   props: {
@@ -34,6 +38,9 @@ export default {
       type: Object,
       required: false
     }
+  },
+  components: {
+    Editor
   },
   data () {
     return {

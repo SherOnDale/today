@@ -4,7 +4,7 @@
       <div class="post-thumbnail" :style="{backgroundImage: 'url(' + thumbnail + ')'}"></div>
       <div class="post-content">
         <h1>{{ title }}</h1>
-        <p>{{ previewText }}</p>
+        <p v-html="previewText"></p>
       </div>
     </article>
   </nuxt-link>
