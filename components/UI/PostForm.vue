@@ -14,7 +14,9 @@
     <Editor api-key="8emogs8yqskwopjg2onxasg1jwx4oasdf6nhsb1dhr88nx7y"
       v-model="editedPost.content"
       class="content"
-      :init="{height: 400}">Content</Editor>
+      :init="{height: 400}"
+      plugins="link textcolor"
+      toolbar="insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link backcolor forecolor">Content</Editor>
 
     <div class="buttons">
       <AppControlInput v-model="editedPost.thumbnail" class="thumbnail">Thumbnail Link</AppControlInput>
