@@ -1,31 +1,31 @@
 <template>
   <form @submit.prevent="onSave">
-    <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
+    <!-- <AppControlInput v-model="editedPost.author">Author Name</AppControlInput> -->
 
-    <AppControlInput v-model="editedPost.title">Title</AppControlInput>
+    <AppControlInput v-model="editedPost.title" class="title">Title</AppControlInput>
 
-    <AppControlInput v-model="editedPost.thumbnail">Thumbnail Link</AppControlInput>
 
     <!-- <AppControlInput
               control-type="textarea"
-              v-model="editedPost.content">Content</AppControlInput>
+              v-model="editedPost.content">Content</AppControlInput> -->
 
-    <AppControlInput
-              control-type="textarea"
-              v-model="editedPost.previewText">Preview Text</AppControlInput> -->
-    <Editor api-key="8emogs8yqskwopjg2onxasg1jwx4oasdf6nhsb1dhr88nx7y" v-model="editedPost.content">Content</Editor>
+    <AppControlInput v-model="editedPost.previewText" class="preview-text">Preview Text</AppControlInput>
 
-    <Editor api-key="8emogs8yqskwopjg2onxasg1jwx4oasdf6nhsb1dhr88nx7y" v-model="editedPost.previewText">Preview Text</Editor>
+    <Editor api-key="8emogs8yqskwopjg2onxasg1jwx4oasdf6nhsb1dhr88nx7y"
+      v-model="editedPost.content"
+      class="content"
+      :init="{height: 400}">Content</Editor>
 
-    <AppButton type="submit"> {{ post ? 'Update' : 'Save' }} </AppButton>
+    <div class="buttons">
+      <AppControlInput v-model="editedPost.thumbnail" class="thumbnail">Thumbnail Link</AppControlInput>
 
-    <AppButton v-if="post" type="button" style="margin-left: 10px" @click="onDelete">Delete</AppButton>
+      <AppButton type="submit" class="submit"> {{ post ? 'Update' : 'Save' }} </AppButton>
 
-    <AppButton
-              type="button"
-              style="margin-left: 10px"
-              btn-style="cancel"
-              @click="onCancel">Cancel</AppButton>
+      <AppButton v-if="post" type="button" @click="onDelete" class="delete">Delete</AppButton>
+
+      <AppButton
+                type="button" btn-style="cancel" class="cancel" @click="onCancel">Cancel</AppButton>
+    </div>
 </form>
 </template>
 
@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       editedPost: this.post ? { ...this.post } : {
-        author: '',
+        author: 'Sherin Binu',
         title: '',
         thumbnail: '',
         content: '',
@@ -66,3 +66,57 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media (min-width: 768px) {
+    form {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-gap: 20px;
+        grid-template-areas:
+            'title preview-text'
+            'buttons body';
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .buttons {
+        grid-area: buttons;
+        display: grid;
+        max-height: 200px;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        grid-template-areas:
+            'thumbnail'
+            'submit'
+            'delete'
+            'cancel';
+    }
+
+    .thumbnail {
+        grid-area: thumbnail;
+    }
+
+    .preview-text {
+        grid-area: preview-text;
+    }
+
+    .content {
+        grid-area: body;
+    }
+
+    .submit {
+        grid-area: submit;
+    }
+
+    .delete {
+        grid-area: delete;
+    }
+
+    .cancel {
+        grid-area: cancel;
+    }
+}
+</style>
