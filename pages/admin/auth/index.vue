@@ -4,12 +4,12 @@
       <form @submit.prevent="onSubmit">
         <AppControlInput type="email" v-model="email">E-Mail Address</AppControlInput>
         <AppControlInput type="password" v-model="password">Password</AppControlInput>
-        <AppButton type="submit">{{ isLogin ? 'Login' : 'Sign Up' }}</AppButton>
-        <AppButton
+        <AppButton class="button" type="submit">{{ isLogin ? 'Login' : 'Sign Up' }}</AppButton>
+        <!-- <AppButton
           type="button"
           btn-style="inverted"
           style="margin-left: 10px"
-          @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton>
+          @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton> -->
       </form>
     </div>
   </div>
@@ -48,6 +48,11 @@ export default {
     margin: auto;
     padding: 10px;
     box-sizing: border-box;
+}
+
+.button {
+    display: block;
+    margin: 0 auto;
 }
 </style>
 
