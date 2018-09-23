@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import TheHeader from '@/components/Navigation/TheHeader'
-import TheSideNav from '@/components/Navigation/TheSideNav'
+import TheHeader from '../components/Navigation/TheHeader'
+import TheSideNav from '../components/Navigation/TheSideNav'
 
 export default {
   middleware: ['check-auth','auth'],

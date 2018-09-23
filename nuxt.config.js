@@ -3,10 +3,6 @@ const pkg = require('./package');
 module.exports = {
   mode: 'universal',
 
-  server: {
-    post: process.env.PORT
-  },
-
   /*
   ** Headers of the page
   */
