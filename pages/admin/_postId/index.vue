@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="update-form">
-      <PostForm :post='loadedPost' @submit='onSubmit'/>
+      <PostForm :post='loadedPost' @submit='onSubmit' @delete='onDelete'/>
     </section>
   </main>
 </template>
@@ -22,6 +22,10 @@ export default {
   methods: {
     onSubmit(editedPost) {
       this.$store.dispatch('editPost', editedPost)
+        .then(() => this.$router.go(-1))
+    },
+    onDelete(postId) {
+      this.$store.dispatch('deletePost', postId)
         .then(() => this.$router.go(-1))
     }
   }

@@ -14,7 +14,9 @@
               control-type="textarea"
               v-model="editedPost.previewText">Preview Text</AppControlInput>
 
-    <AppButton type="submit"> {{ successButtonText }} </AppButton>
+    <AppButton type="submit"> {{ post ? 'Update' : 'Save' }} </AppButton>
+
+    <AppButton v-if="post" type="button" style="margin-left: 10px" @click="onDelete">Delete</AppButton>
 
     <AppButton
               type="button"
@@ -41,8 +43,7 @@ export default {
         thumbnail: '',
         content: '',
         previewText: ''
-      },
-      successButtonText: this.post ? 'Update' : 'Save'
+      }
     }
   },
   methods: {
@@ -51,6 +52,9 @@ export default {
     },
     onCancel() {
       this.$router.go(-1);
+    },
+    onDelete() {
+      this.$emit('delete', this.editedPost.id);
     }
   }
 }
