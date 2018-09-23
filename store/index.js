@@ -163,6 +163,13 @@ const createStore = () => {
       },
       isAuthenticated(state) {
         return state.token != null;
+      },
+      todayPosts(state) {
+        return state.loadedPosts.filter(
+          post =>
+            new Date(post.updatedDate).toDateString() ==
+            new Date().toDateString()
+        );
       }
     }
   });
