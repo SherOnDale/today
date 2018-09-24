@@ -37,7 +37,7 @@ export default {
 .the-header {
     width: 100%;
     position: fixed;
-    height: 8vh;
+    height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
