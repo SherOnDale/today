@@ -55,7 +55,6 @@ const createStore = () => {
       },
       addPost(vuexContext, post) {
         const createdPost = { ...post, updatedDate: new Date() };
-        console.log(this.$axios.defaults.baseURL);
         return this.$axios
           .$post(
             'https://nuxt-blog-13c98.firebaseio.com/posts.json?auth=' +
@@ -159,7 +158,7 @@ const createStore = () => {
     },
     getters: {
       loadedPosts(state) {
-        return state.loadedPosts.slice(0).sort((a, b) => {
+        return state.loadedPosts.sort((a, b) => {
           return (
             new Date(b.updatedDate).getTime() -
             new Date(a.updatedDate).getTime()
