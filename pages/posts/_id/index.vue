@@ -52,7 +52,6 @@ export default {
 main {
     padding: 30px;
     box-sizing: border-box;
-    word-break: break-all;
     flex: 1 0 auto;
 }
 
