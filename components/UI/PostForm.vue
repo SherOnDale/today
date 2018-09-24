@@ -15,8 +15,8 @@
       v-model="editedPost.content"
       class="content"
       :init="{height: 400}"
-      plugins="link textcolor wordcount emoticons table fullscreen preview lists image"
-      toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image | backcolor forecolor | emoticons">Content</Editor>
+      plugins="link textcolor wordcount emoticons table fullscreen preview lists image codesample"
+      toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image codesample | backcolor forecolor | emoticons">Content</Editor>
 
     <div class="buttons">
       <AppControlInput v-model="editedPost.thumbnail" class="thumbnail">Thumbnail Link</AppControlInput>
