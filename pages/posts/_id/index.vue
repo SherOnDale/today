@@ -46,6 +46,7 @@ export default {
 main {
     padding: 30px;
     box-sizing: border-box;
+    word-break: break-all;
 }
 
 .post {

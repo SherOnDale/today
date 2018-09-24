@@ -8,7 +8,6 @@
 <style scoped>
 footer {
     position: fixed;
-    height: 3em;
     bottom: 0;
     width: 100%;
     text-align: center;
