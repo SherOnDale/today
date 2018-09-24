@@ -6,7 +6,7 @@
         <div class="post-detail">Last updated on {{ loadedPost.updatedDate | date }}</div>
         <div class="post-detail">Written by {{ loadedPost.author }}</div>
       </div>
-      <p class="post-content" v-html="loadedPost.content"></p>
+      <div class="post-content" v-html="loadedPost.content"></div>
     </section>
     <section class="post-feedback">
       <p>Let me know what you think about the post, send a mail to <a href="mailto:sherinbinu@hotmail.com">sherinbinu@hotmail.com</a></p>
@@ -27,6 +27,9 @@ export default {
             const post = loadedPosts.filter(post => post.id == id)[0];
             return post;
         }
+    },
+    mounted() {
+        Prism.highlightAll();
     }
 }
 </script>
