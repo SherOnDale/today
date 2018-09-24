@@ -1,17 +1,17 @@
 <template>
-  <main>
-    <section class="post">
-      <h1 class="post-title">{{ loadedPost.title }}</h1>
-      <div class="post-details">
-        <div class="post-detail">Last updated on {{ loadedPost.updatedDate | date }}</div>
-        <div class="post-detail">Written by {{ loadedPost.author }}</div>
-      </div>
-      <div class="post-content" v-html="loadedPost.content"></div>
-    </section>
-    <section class="post-feedback">
-      <p>Let me know what you think about the post, send a mail to <a href="mailto:sherinbinu@hotmail.com">sherinbinu@hotmail.com</a></p>
-    </section>
-  </main>
+<div>
+    <main>
+        <section class="post">
+        <h1 class="post-title">{{ loadedPost.title }}</h1>
+        <div class="post-details">
+            <div class="post-detail">Last updated on {{ loadedPost.updatedDate | date }}</div>
+            <div class="post-detail">Written by {{ loadedPost.author }}</div>
+        </div>
+        <div class="post-content" v-html="loadedPost.content"></div>
+        </section>
+    </main>
+    <Footer />
+</div>
 </template>
 
 <script>
@@ -21,9 +21,13 @@ import 'prismjs/plugins/toolbar/prism-toolbar.min'
 import 'prismjs/plugins/toolbar/prism-toolbar.css'
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min'
 import 'prismjs/plugins/show-language/prism-show-language.min'
+import Footer from '@/components/UI/Footer'
 
 
 export default {
+    components: {
+        Footer
+    },
     computed: {
         loadedPost() {
             const id = this.$route.params.id
@@ -78,19 +82,5 @@ main {
 .post-detail {
     color: rgb(88, 88, 88);
     margin: 0 10px;
-}
-
-.post-feedback {
-    text-align: center;
-}
-
-.post-feedback a {
-    color: red;
-    text-decoration: none;
-}
-
-.post-feedback a:hover,
-.post-feedback a:active {
-    color: salmon;
 }
 </style>
