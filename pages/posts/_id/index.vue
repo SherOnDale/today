@@ -17,6 +17,10 @@
 <script>
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/plugins/toolbar/prism-toolbar.min'
+import 'prismjs/plugins/toolbar/prism-toolbar.css'
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min'
+import 'prismjs/plugins/show-language/prism-show-language.min'
 
 
 export default {
