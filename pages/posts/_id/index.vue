@@ -30,7 +30,6 @@ export default {
 <style scoped>
 main {
     padding: 30px;
-    text-align: center;
     box-sizing: border-box;
 }
 
@@ -68,6 +67,10 @@ main {
 .post-detail {
     color: rgb(88, 88, 88);
     margin: 0 10px;
+}
+
+.post-feedback {
+    text-align: center;
 }
 
 .post-feedback a {
