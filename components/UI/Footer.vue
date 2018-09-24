@@ -7,12 +7,13 @@
 
 <style scoped>
 footer {
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
     width: 100%;
     text-align: center;
     background-color: black;
     color: white;
+    padding: 0.5em;
 }
 
 footer a {

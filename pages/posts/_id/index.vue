@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="container">
     <main>
         <section class="post">
         <h1 class="post-title">{{ loadedPost.title }}</h1>
@@ -10,7 +10,7 @@
         <div class="post-content" v-html="loadedPost.content"></div>
         </section>
     </main>
-    <Footer />
+    <Footer class="footer" />
 </div>
 </template>
 
@@ -43,10 +43,17 @@ export default {
 </script>
 
 <style scoped>
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 92vh;
+}
+
 main {
     padding: 30px;
     box-sizing: border-box;
     word-break: break-all;
+    flex: 1 0 auto;
 }
 
 .post {
@@ -83,5 +90,9 @@ main {
 .post-detail {
     color: rgb(88, 88, 88);
     margin: 0 10px;
+}
+
+.footer {
+    flex-shrink: 0;
 }
 </style>
