@@ -159,17 +159,29 @@ const createStore = () => {
     },
     getters: {
       loadedPosts(state) {
-        return state.loadedPosts;
+        return state.loadedPosts.slice(0).sort((a, b) => {
+          return (
+            new Date(b.updatedDate).getTime() -
+            new Date(a.updatedDate).getTime()
+          );
+        });
       },
       isAuthenticated(state) {
         return state.token != null;
       },
       todayPosts(state) {
-        return state.loadedPosts.filter(
-          post =>
-            new Date(post.updatedDate).toDateString() ==
-            new Date().toDateString()
-        );
+        return state.loadedPosts
+          .filter(
+            post =>
+              new Date(post.updatedDate).toDateString() ==
+              new Date().toDateString()
+          )
+          .sort((a, b) => {
+            return (
+              new Date(b.updatedDate).getTime() -
+              new Date(a.updatedDate).getTime()
+            );
+          });
       }
     }
   });
