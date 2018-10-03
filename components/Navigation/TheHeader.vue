@@ -8,7 +8,7 @@
     <div class="spacer"></div>
     <div class="navigation-items">
       <ul class="nav-list">
-        <li class="nav-item"><nuxt-link to="/posts">All Posts</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/posts">Archives</nuxt-link></li>
         <li class="nav-item"><a target="_blank" href="https://sherondale.me">About</a></li>
         <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
       </ul>
