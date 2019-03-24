@@ -9,9 +9,9 @@ services:
     ports:
       - "3050:80"
   api:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./server
+    image: node:alpine
+    working_dir: /app
+    command: npm run dev
     volumes:
       - ./server:/app
     environment:
@@ -24,5 +24,7 @@ services:
     image: node:alpine
     working_dir: /app
     command: npm run dev
+    ports:
+      - "3000:3000"
     volumes:
       - ./client:/app

@@ -2,10 +2,14 @@ const pkg = require('./package');
 
 module.exports = {
   mode: 'universal',
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
+  },
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'What I Learned Today',
     meta: [
@@ -27,23 +31,23 @@ module.exports = {
   },
 
   /*
-  ** Customize the progress-bar color fa923f
-  */
+   ** Customize the progress-bar color fa923f
+   */
   loading: { color: '#fa923f', duration: 5000, height: '4px' },
 
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ['~assets/styles/main.css'],
 
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: ['~plugins/index.js', '~plugins/date-filter.js'],
 
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     [
       '@nuxtjs/axios',
@@ -55,12 +59,12 @@ module.exports = {
   ],
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {}
   },
 
