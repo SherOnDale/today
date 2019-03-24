@@ -10,29 +10,17 @@ metadata:
 spec:
   tls:
     - hosts:
-        - sherondale.me
-        - www.sherondale.me
-      secretName: sherondale-me
+        - today.sherondale.me
+      secretName: today-sherondale-me
   rules:
-    - host: sherondale.me
+    - host: today.sherondale.me
       http:
         paths:
           - path: /?(.*)
             backend:
-              serviceName: multi-docker-client-cluster-ip-service
+              serviceName: today-client-cluster-ip-service
               servicePort: 3000
           - path: /api/?(.*)
             backend:
-              serviceName: multi-docker-server-cluster-ip-service
-              servicePort: 5000
-    - host: www.sherondale.me
-      http:
-        paths:
-          - path: /?(.*)
-            backend:
-              serviceName: multi-docker-client-cluster-ip-service
-              servicePort: 3000
-          - path: /api/?(.*)
-            backend:
-              serviceName: multi-docker-server-cluster-ip-service
+              serviceName: today-server-cluster-ip-service
               servicePort: 5000

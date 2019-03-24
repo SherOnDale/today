@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: multi-docker-server-deployment
+  name: today-server-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: multi-docker-server
+      app: today-server
   template:
     metadata:
       labels:
-        app: multi-docker-server
+        app: today-server
     spec:
       containers:
-        - name: multi-docker-server
-          image: sherondale/multi-docker-server
+        - name: today-server
+          image: sherondale/today-server
           ports:
             - containerPort: 5000
           env:

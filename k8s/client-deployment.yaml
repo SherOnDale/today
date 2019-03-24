@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: multi-docker-client-deployment
+  name: today-client-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: multi-docker-client
+      app: today-client
   template:
     metadata:
       labels:
-        app: multi-docker-client
+        app: today-client
     spec:
       containers:
-        - name: multi-docker-client
-          image: sherondale/multi-docker-client
+        - name: today-client
+          image: sherondale/today-client
           ports:
             - containerPort: 3000
