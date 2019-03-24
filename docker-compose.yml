@@ -21,8 +21,8 @@ services:
       - PG_PASSWORD=postgres_password
       - PG_PORT=5432
   client:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./client
+    image: node:alpine
+    working_dir: /app
+    command: npm run dev
     volumes:
       - ./client:/app
