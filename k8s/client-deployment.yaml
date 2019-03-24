@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-docker-client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multi-docker-client
+  template:
+    metadata:
+      labels:
+        app: multi-docker-client
+    spec:
+      containers:
+        - name: multi-docker-client
+          image: sherondale/multi-docker-client
+          ports:
+            - containerPort: 3000

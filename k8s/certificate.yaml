@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: sherondale-me-tls
+spec:
+  secretName: sherondale-me
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: sherondale.me
+  dnsNames:
+    - sherondale.me
+    - www.sherondale.me
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - sherondale.me
+          - www.sherondale.me

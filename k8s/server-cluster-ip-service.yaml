@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-docker-server-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    app: multi-docker-server
+  ports:
+    - port: 5000
+      targetPort: 5000
