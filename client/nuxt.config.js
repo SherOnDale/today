@@ -1,6 +1,6 @@
-const pkg = require('./package');
+import pkg from './package';
 
-module.exports = {
+export default {
   mode: 'universal',
   server: {
     port: 3000,
@@ -11,52 +11,44 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'What I Learned Today',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'My Blog of everything new thing I learn each day'
-      }
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Open+Sans'
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*
-   ** Customize the progress-bar color fa923f
+   ** Customize the progress-bar color
    */
-  loading: { color: '#fa923f', duration: 5000, height: '4px' },
+  loading: { color: '#fff' },
 
   /*
    ** Global CSS
    */
-  css: ['~assets/styles/main.css'],
+  css: [],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/index.js', '~plugins/date-filter.js'],
+  plugins: [],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
-    [
-      '@nuxtjs/axios',
-      {
-        baseURL: 'https://nuxt-blog-13c98.firebaseio.com/',
-        browserBaseURL: 'https://nuxt-blog-13c98.firebaseio.com/'
-      }
-    ]
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
+  /*
+   ** Axios module configuration
+   */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
 
   /*
    ** Build configuration
@@ -66,14 +58,5 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  },
-
-  env: {
-    fbAPIKey: 'AIzaSyDeQ8zBDXxN4Ut9Xvze6IUi3RdRuaMEOds'
-  },
-
-  transition: {
-    name: 'fade',
-    mode: 'out-in'
   }
 };

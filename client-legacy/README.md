@@ -1,6 +1,6 @@
-# today
+# blog
 
-> My Blog
+> My blog
 
 ## Build Setup
 
