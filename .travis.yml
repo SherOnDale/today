@@ -12,9 +12,9 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
-  - gcloud config set project multi-docker-234713
-  - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials multi-cluster
+  - gcloud config set project magnetic-nimbus-234705
+  - gcloud config set compute/zone asia-south1-a
+  - gcloud container clusters get-credentials today-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t sherondale/today-test -f ./client/Dockerfile.dev ./client
 
