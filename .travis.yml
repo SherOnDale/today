@@ -16,7 +16,6 @@ before_install:
   - gcloud config set compute/zone asia-south1-a
   - gcloud container clusters get-credentials today-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t sherondale/today-test -f ./client/Dockerfile.dev ./client
 
 script:
   - ls
