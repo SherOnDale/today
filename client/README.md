@@ -1,10 +1,10 @@
-# today
+# What I Learned Today
 
-> My Blog
+> My Blog of everything new I learn each day
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 

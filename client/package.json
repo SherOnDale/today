@@ -1,7 +1,7 @@
 {
-  "name": "today",
+  "name": "What I Learned Today",
   "version": "1.0.0",
-  "description": "My Blog",
+  "description": "My Blog of everything new I learn each day",
   "author": "Sherin Binu",
   "private": true,
   "scripts": {
