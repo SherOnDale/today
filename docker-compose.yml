@@ -23,7 +23,7 @@ services:
   client:
     image: node:alpine
     working_dir: /app
-    command: npm run dev
+    command: npm start
     ports:
       - "3000:3000"
     volumes:
